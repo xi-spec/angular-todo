@@ -1,0 +1,39 @@
+<h1 class="title">Edit todo</h1>
+<div mat-dialog-content>
+  <form (ngSubmit)="onFormSubmit(form)" #form="ngForm">
+    <div class="field">
+      <input
+        #todoTextField="ngModel"
+        [ngModel]="todo.text"
+        name="text"
+        type="text"
+        class="input"
+        required
+        minlength="2"
+        placeholder="Type todo here..."
+      />
+      <div *ngIf="todoTextField.invalid">
+        <p class="help is-danger" *ngIf="todoTextField.errors?.required">
+          Please enter the text of your todo
+        </p>
+        <p class="help is-danger" *ngIf="todoTextField.errors?.minlength">
+          Todo text must be at least 2 characters
+        </p>
+      </div>
+    </div>
+    <br />
+    <div class="field is-grouped is-grouped-right">
+      <div class="control">
+        <button class="button is-light" type="button" (click)="close()">
+          Cancel
+        </button>
+      </div>
+      <div class="control">
+        <button type="submit" class="button alt-gradient-button">
+          <span class="material-icons">save</span>
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

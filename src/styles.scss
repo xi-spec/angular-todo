@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bulma/bulma.sass";
+@import "tippy.js/dist/tippy.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+.alt-gradient-button {
+  background: linear-gradient(to right, rgb(258, 5, 27), rgb(240, 52, 82));
+  border: none;
+  color: white;
+  font-weight: 600;
+  opacity: 0.8;
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 1;
+    color: white;
+    box-shadow: 0px 0px 10px rgb(black, 0.12);
+  }
+
+  &:active {
+    opacity: 0.8;
+    color: white;
+  }
+
+  &:focus {
+    color: white;
+  }
+}
+
+span.material-icons {
+  margin-right: 5px;
+  margin-left: -5px;
+}
